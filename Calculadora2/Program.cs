@@ -17,7 +17,7 @@ do
 
 }while(n3 == 0);
 
-for (n4 = 4; n4 == 0; )
+for (n4 = 0; n4 ==0; )
 {
     Console.WriteLine("Informe o quarto valor: ");
     n4 = float.Parse(Console.ReadLine());
@@ -30,31 +30,20 @@ Console.WriteLine("3 - Multiplicação: ");
 Console.WriteLine("4 - Divisão: ");
 opcao = int.Parse(Console.ReadLine());
 
-if(opcao == 1)
+switch (opcao)
 {
-   resultado =  n1 + n2 + n3 + n4;
-   Console.WriteLine("O resultado é: "+resultado);
+    case 1:
+        resultado = n1 + n2 + n3 + n4; break;
+    case 2:
+        resultado = n1 - n2 - n3 - n4; break;
+    case 3:
+        resultado = n1 * n2 * n3 * n4; break;
+    case 4:
+        resultado = n1 / n2 / n3 / n4; break;
+    default:
+        Console.WriteLine("Opção inválida");
+        break;
+    
 }
-else
-{
-    if(opcao == 2)
-    {
-        resultado = n1 - n2 - n3 - n4;
-        Console.WriteLine($"O resultado é:  {resultado}");
-    }
-    else
-    {
-        if(opcao == 3)
-        {
-            resultado = n1 * n2 * n3 * n4;
-            Console.WriteLine("O resultado é: " + resultado);
-        }
-        else
-        {
-            resultado = n1 / n2 / n3 / n4;
-            Console.WriteLine($"O resultado é:  {resultado}");
-        }
-    }
-}
-
-
+        while (opcao < 1 || opcao > 4) ;
+        Console.WriteLine("O resultado é: " + resultado);
